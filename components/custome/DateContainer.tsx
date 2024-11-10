@@ -1,6 +1,7 @@
 import { ThemedText } from "../template/ThemedText";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { ThemedView } from "../template/ThemedView";
+import {lightGray} from "../../constants/Colors"
 type propType={
     month:string,
      date:number,
@@ -11,7 +12,7 @@ type propType={
 function DateContainer({month,date,day,isSelected=false,onClickHandler}:propType) {
     const currentColor=isSelected?"green":"black"
   return (
-    <TouchableOpacity onPress={onClickHandler} style={{borderColor:isSelected?"green":"#cecece",...styles.container}}>
+    <TouchableOpacity onPress={onClickHandler} style={{borderColor:isSelected?"green":lightGray,...styles.container}}>
       <ThemedText style={{ fontSize: 15 ,color:currentColor}}>{month}</ThemedText>
       <ThemedText style={{ fontSize: 22,fontWeight:'bold' ,color:currentColor}}>{date}</ThemedText>
       <ThemedText style={{ fontSize: 17 ,color:currentColor}}>{day}</ThemedText>
